@@ -12,10 +12,10 @@ class OrderItem extends StatefulWidget {
   OrderItem(this.order);
 
   @override
-  State<OrderItem> createState() => _OrderItemState();
+  State<OrderItem> createState() => _Order_itemstate();
 }
 
-class _OrderItemState extends State<OrderItem> {
+class _Order_itemstate extends State<OrderItem> {
   var _expanded = false;
   @override
   Widget build(BuildContext context) {
