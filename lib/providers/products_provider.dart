@@ -79,11 +79,12 @@ class ProductsProvider with ChangeNotifier {
           'isFavourite': product.isFavourite,
         }));
     final newProduct = Product(
-        id: DateTime.now().toString(),
-        title: product.title,
-        description: product.description,
-        price: product.price,
-        imageUrl: product.imageUrl);
+      id: DateTime.now().toString(),
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      imageUrl: product.imageUrl,
+    );
     _items.add(newProduct);
     // _items.insert(0, newProduct); //inserts at start of the list
     notifyListeners();
@@ -95,7 +96,7 @@ class ProductsProvider with ChangeNotifier {
       _items[prodIndex] = newProduct;
       notifyListeners();
     } else {
-      print('...');
+      print(prodIndex);
     }
   }
 

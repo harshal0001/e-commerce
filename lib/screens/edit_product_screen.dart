@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
 import 'package:shop/providers/product.dart';
 import 'package:shop/providers/products_provider.dart';
@@ -45,7 +42,7 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
   @override
   void didChangeDependencies() {
     if (_isInit) {
-      final productId = ModalRoute.of(context)?.settings.arguments as String;
+      final productId = ModalRoute.of(context)?.settings.arguments as String?;
       if (productId != null) {
         _editedProduct = Provider.of<ProductsProvider>(context, listen: false)
             .findById(productId);
@@ -85,18 +82,18 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
 
   void _saveForm() {
     final isValid = _form.currentState?.validate();
-    if (!isValid!) {
-      return;
+    if (isValid!) {
+      _form.currentState?.save();
+      if (_editedProduct.id != null) {
+        Provider.of<ProductsProvider>(context, listen: false)
+            .updateProduct(_editedProduct.id, _editedProduct);
+      } else {
+        Provider.of<ProductsProvider>(context, listen: false)
+            .addProduct(_editedProduct);
+      }
+      Navigator.of(context).pop();
     }
-    _form.currentState?.save();
-    if (_editedProduct.id != null) {
-      Provider.of<ProductsProvider>(context, listen: false)
-          .updateProduct(_editedProduct.id, _editedProduct);
-    } else {
-      Provider.of<ProductsProvider>(context, listen: false)
-          .addProduct(_editedProduct);
-    }
-    Navigator.of(context).pop();
+    return;
   }
 
   @override
@@ -213,6 +210,7 @@ class _EditProductsScreenState extends State<EditProductsScreen> {
                         : FittedBox(
                             child: Image.network(_imageUrlControllor.text),
                             fit: BoxFit.cover,
+                            clipBehavior: Clip.hardEdge,
                           ),
                   ),
                   Expanded(
