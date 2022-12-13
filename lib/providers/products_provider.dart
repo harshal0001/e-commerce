@@ -11,32 +11,28 @@ class ProductsProvider with ChangeNotifier {
       title: 'iPhone 13 Pro',
       description: 'Oh So Pro',
       price: 999,
-      imageUrl:
-          'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-blue-select?wid=470&hei=556&fmt=png-alpha&.v=1645552346275',
+      imageUrl: 'https://m.media-amazon.com/images/I/61jLiCovxVL._SL1500_.jpg',
     ),
     Product(
       id: '2',
       title: 'MacBook Pro',
       description: 'Pro Anywhere',
       price: 1299,
-      imageUrl:
-          'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp16-spacegray-select-202110?wid=904&hei=843&fmt=jpeg&qlt=95&.v=1632788574000',
+      imageUrl: 'https://m.media-amazon.com/images/I/61aUBxqc5PL._SL1500_.jpg',
     ),
     Product(
       id: '3',
       title: 'Apple Watch Series 7',
       description: 'Full Screen Ahead',
       price: 399,
-      imageUrl:
-          'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MKUQ3_VW_34FR+watch-45-alum-midnight-nc-7s_VW_34FR_WF_CO?wid=700&hei=700&trim=1%2C0&fmt=p-jpg&qlt=95&.v=1632171067000%2C1631661671000',
+      imageUrl: 'https://m.media-amazon.com/images/I/71W+RrSPINL._SL1500_.jpg',
     ),
     Product(
       id: '4',
       title: 'iPad Pro',
       description: 'The Ultimate iPad Experience',
       price: 799,
-      imageUrl:
-          'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-12-select-202104_GEO_IN?wid=970&amp;hei=1020&amp;fmt=png-alpha&amp;.v=1617903448000',
+      imageUrl: 'https://m.media-amazon.com/images/I/81hAx31maUL._SL1500_.jpg',
     ),
   ];
 
